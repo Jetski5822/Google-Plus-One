@@ -23,7 +23,8 @@ namespace NGM.GooglePlusone {
             } else {
                 try {
                     var ci = new CultureInfo(currentCultureName);
-                    manifest.DefineScript("GooglePlusone").SetUrl("https://apis.google.com/js/plusone.js").SetVersion("0.0.1");
+                    // Until I can het the culture stuff plugged in.
+                    RegisterDefaultLocalizedVersionOfJavascriptFiles(manifest);
                 } catch (CultureNotFoundException) {
                     RegisterDefaultLocalizedVersionOfJavascriptFiles(manifest);
                 }
@@ -31,7 +32,7 @@ namespace NGM.GooglePlusone {
         }
 
         private static void RegisterDefaultLocalizedVersionOfJavascriptFiles(Orchard.UI.Resources.ResourceManifest manifest) {
-            manifest.DefineScript("GooglePlusone").SetUrl("https://apis.google.com/js/plusone.js");
+            manifest.DefineScript("GooglePlusone").SetUrl("https://apis.google.com/js/plusone.js").SetVersion("0.0.1");
         }
     }
 }
