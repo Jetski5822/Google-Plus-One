@@ -1,0 +1,15 @@
+﻿@using NGM.GooglePlusone.Extensions
+@using NGM.GooglePlusone.Models
+
+@{
+    var culture = Model.Culture;
+    var contentPart = (GooglePlusonePart)Model.ContentPart;
+}
+
+@Html.BuildPlusoneHtmlFor(contentPart)
+
+@using (Script.Foot()) {
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+        {lang: @culture.Name, parsetags: @contentPart.Parse}
+    </script>
+}

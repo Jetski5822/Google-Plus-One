@@ -1,0 +1,24 @@
+﻿@model NGM.GooglePlusone.Models.GooglePlusonePart
+<fieldset>
+    <legend>Google Plusone settings</legend>
+    <div>
+        @Html.EditorFor(m => m.IncludeCount)
+        <label for="@Html.FieldIdFor(m => m.IncludeCount)" class="forcheckbox">@T("Include Count")</label>
+    </div>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.JsCallbackFunction)">@T("Javascript callback function")</label>
+        @Html.EditorFor(m => m.JsCallbackFunction)
+    </div>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.Parse)">@T("Parse")</label>
+        @Html.DropDownList("Parse", Enum.GetNames(typeof(NGM.GooglePlusone.Models.Parse)).Select(o => new SelectListItem { Text = o, Value = o }))
+    </div>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.Size)">@T("Size")</label>
+        @Html.DropDownList("Size", Enum.GetNames(typeof(NGM.GooglePlusone.Models.Size)).Select(o => new SelectListItem { Text = o, Value = o }))
+    </div>
+    <div>
+        <label for="@Html.FieldIdFor(m => m.UrlToPlusone)">@T("Url to +1")</label>
+        @Html.EditorFor(m => m.UrlToPlusone)
+    </div>
+</fieldset>
