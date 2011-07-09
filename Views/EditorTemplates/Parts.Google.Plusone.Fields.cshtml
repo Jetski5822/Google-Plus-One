@@ -1,6 +1,7 @@
 ﻿@model NGM.GooglePlusone.Models.GooglePlusonePart
 <fieldset>
     <legend>Google Plusone settings</legend>
+    <span class="hint"><a href="http://www.google.com/intl/en/webmasters/+1/button/index.html">@T("Visit the google api to play with customization.")</a></span>
     <div>
         @Html.EditorFor(m => m.IncludeCount)
         <label for="@Html.FieldIdFor(m => m.IncludeCount)" class="forcheckbox">@T("Include Count")</label>
