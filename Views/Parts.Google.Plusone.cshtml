@@ -8,12 +8,8 @@
 
 @Html.BuildPlusoneHtmlFor(contentPart)
 
-
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-    {lang: @culture.Name, parsetags: @contentPart.Parse}
-</script>
-    
-@if (contentPart.Parse == NGM.GooglePlusone.Models.Parse.Explicit.ToString())
-{
-    <script type="text/javascript">gapi.plusone.go();</script>
+@using(Script.Foot()) {
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+        {lang: @culture.Name }
+    </script>
 }
